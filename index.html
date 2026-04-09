@@ -8,12 +8,21 @@
     background-color: black;
     color: white;
   }
-</style>
+</style>?
+<style>
+.card {
+  padding: 15px;
+  margin: 15px;
+  border-radius: 10px;
+  background: teal;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}</style>
 <nav>
   <ul>
   <li><a href="#home">Home</a></li>
    <li><a href="#famous-dogs">Famous Dogs</a></li>
     <li><a href="#funny-videos">Funny videos</a></li>
+    <li><a href="#dog-history">Dog history</a></li>
   </ul>
 </nav>
 
@@ -22,9 +31,9 @@
   </head>
   <body>
     <main>
-    <section id="home">
+    <article id="home" class="card">
       <h1>Dogs</h1>
-      <p>This website is about famous dogs in history and funny dog content.</p>
+      <p>This website is about historical dogs, famous dogs, and funny dog content.</p>
       <hr>
       <figure> 
         <h2>Dogs are beautiful.</h2>
@@ -32,24 +41,26 @@
         <q cite="https://ridetheskyequine.com/blog/amazing-dog-quotes/">I think dogs are the most amazing creatures; they give unconditional love. For me, they are the role model for being alive.</q> <cite>Gilda Radner</cite>
         <hr>
         <img src="https://images.pexels.com/photos/6623995/pexels-photo-6623995.jpeg" style="width: 700px; height: 975px;" alt="Dog with colorful sky">
-        </section>
-        <section>
+        </article>
+        <section class="card">
+        <div class="card-container">
 <h2>Fun dog facts</h2>
-<ul>
-<li>Dogs can smell 10,000x better than humans.</li>
-<li>The oldest dog lived to 30.</li>
-<li>Dogs can learn over 100 words and gestures (Some even more).</li></ul></section>
+
+<article class="card"><p>Dogs can smell 10,000x better than humans.</p></article>
+<article class="card"><p>The oldest dog lived to 30.</p></article>
+<article class="card"><p>Dogs can learn over 100 words and gestures (Some even more).</p></article></section> </div>
       </figure>
       </section>
-      <section>  
-        <h2>Dogs have been around a long time.</h2>
+      <article class="card" id="dog-history">  
+      <h2>First recorded dog.</h2>
+        <h3>Dogs have been around a long time.</h3>
         <img src="https://images.pexels.com/photos/27793395/pexels-photo-27793395.jpeg" style="width: 650px; height: 650px;" alt="Dog skull">
         <p>Dogs have been gracing us with their fluffy presence for at least 15,000 years to possibly over 30,000 years.
     The earliest, most undisputed evidence of a domesticated dog is the Bonn-Oberkassel dog, dating to 
     approximately 14,200 years ago. The dog's skull and jawbone were found buried alongside two humans
     (a man and a woman), suggesting a deep emotional bond and care for the animal, which was likely ill.</p>
-      </section>
-      <section id="funny-videos">
+      </article>
+      <article id="funny-videos" class="card">
       <h2>Funny dog videos.</h2>
         <h3>Dogs are funny.</h3>
   <p style="position: absolute; top: 10px; left: 10px; color: white; z-index: 1; font-weight: bold;"> 
@@ -64,8 +75,8 @@
     of the zoomies after an unwanted bath. Dogs are sure to brighten up your day if you're feeling down or
     just need someone to cuddle with to ease the daily stress life brings on.</p>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/-AdteE-KuIg?si=7PN7w5eLDqhrl_6H" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </section>
-      <section id="famous-dogs">
+      </article>
+      <article id="famous-dogs" class="card">
       <h2>Famous dogs in history</h2>
        <h3>Dogs are loyal.</h3>
         <p>Here is a video of a Hachik&#333;, who is one of the most famous real dogs, who is known for his extraordinary loyalty.</p>
@@ -76,14 +87,15 @@ lives as fire dogs, K9 police dogs, and military dogs, they have a knack for hel
 love doing it too. </p>
 <p>Here is a video about Sgt. Stubby, a stray dog who became the most decorated war dog of World War 1.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/YfZLcqc4RO0?si=QsLKgczd9QlDiM0J" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+</article>
+<section class="card">
 <iframe src="match3game2.html" 
-            width="800" 
-            height="600" 
+            width="700" 
+            height="500" 
             style="border:none;">
     </iframe>
+    </section>
 
- </section>
     </main>
   </body>
 </html>
