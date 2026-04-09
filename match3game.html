@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Match-3 Game</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fce4ec;
+            color: #880e4f;
+            margin: 0;
+            padding: 20px;
+        }
+        #game-container {
+            display: grid;
+            grid-template-columns: repeat(8, 60px);
+            grid-template-rows: repeat(8, 60px);
+            gap: 8px;
+            background-color: #f06292;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+        .tile {
+            width: 60px;
+            height: 60px;
+            background-color: #fff;
+            border-radius: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            transition: transform 0.2s, background-color 0.2s;
+            user-select: none;
+        }
+        .tile:hover { transform: scale(1.05); background-color: #ffebee; }
+        .selected { border: 4px solid #fff; background-color: #f8bbd0 !important; transform: scale(1.1); z-index: 5; }
+        
+        #ui { margin-top: 25px; text-align: center; }
+        #score { font-size: 2.5rem; font-weight: bold; margin-bottom: 10px; }
+        .btn { padding: 10px 20px; background: #880e4f; color: white; border: none; border-radius: 20px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <h1>🐶 Dog Match-3 🦴</h1>
+    <div id="game-container"></div>
+    
+    <div id="ui">
+        <div id="score">Score: 0</div>
+        <button class="btn" onclick="location.reload()">New Game</button>
+        <p>Swap the doggos to make matches of 3 or more!</p>
+    </div>
+
+    <script>
+        const width = 8;
+        // Using Dog Emojis for the "faces"
+        const dogs = ['🐶', '🐕', '🐩', '🦮', '🐕‍🦺', '🐾'];
+        const container = document.getElementById('game-container');
+        const scoreDisplay = document.getElementById('score');
+        let tiles = [];
+        let score = 0;
+        let firstSelection = null;
+
+        function createBoard() {
+            for (let i = 0; i < width * width; i++) {
+                const tile = document.createElement('div');
+                tile.setAttribute('id', i);
+                tile.classList.add('tile');
+                // Assign a random dog face
+                tile.innerText = dogs[Math.floor(Math.random() * dogs.length)];
+                tile.onclick = () => handleSelection(tile);
+                container.appendChild(tile);
+                tiles.push(tile);
+            }
+            // Clear any random matches created at start
+            while(checkAndClearMatches(true)) {} 
+            score = 0; // Reset score after initial cleanup
+            scoreDisplay.innerHTML = `Score: 0`;
+        }
+
+        function handleSelection(tile) {
+            if (!firstSelection) {
+                firstSelection = tile;
+                tile.classList.add('selected');
+            } else {
+                const id1 = parseInt(firstSelection.id);
+                const id2 = parseInt(tile.id);
+                
+                const isAdjacent = [id1 - 1, id1 + 1, id1 - width, id1 + width].includes(id2);
+
+                if (isAdjacent) {
+                    swapEmoji(firstSelection, tile);
+                    if (!checkAndClearMatches()) {
+                        // Swap back if no match found
+                        setTimeout(() => swapEmoji(firstSelection, tile), 300);
+                    }
+                }
+                
+                firstSelection.classList.remove('selected');
+                firstSelection = null;
+            }
+        }
+
+        function swapEmoji(t1, t2) {
+            const temp = t1.innerText;
+            t1.innerText = t2.innerText;
+            t2.innerText = temp;
+        }
+
+        function checkAndClearMatches(isInitial = false) {
+            let matchFound = false;
+            let toClear = new Set();
+
+            // Horizontal scan
+            for (let i = 0; i < 64; i++) {
+                if ((i % width) < (width - 2)) {
+                    if (tiles[i].innerText === tiles[i+1].innerText && tiles[i].innerText === tiles[i+2].innerText) {
+                        [i, i+1, i+2].forEach(idx => toClear.add(idx));
+                        matchFound = true;
+                    }
+                }
+            }
+
+            // Vertical scan
+            for (let i = 0; i < 48; i++) {
+                if (tiles[i].innerText === tiles[i+width].innerText && tiles[i].innerText === tiles[i+width*2].innerText) {
+                    [i, i+width, i+width*2].forEach(idx => toClear.add(idx));
+                    matchFound = true;
+                }
+            }
+
+            if (matchFound) {
+                toClear.forEach(idx => {
+                    tiles[idx].innerText = dogs[Math.floor(Math.random() * dogs.length)];
+                    if (!isInitial) score += 10;
+                });
+                if (!isInitial) {
+                    scoreDisplay.innerHTML = `Score: ${score}`;
+                    setTimeout(() => checkAndClearMatches(), 400);
+                }
+            }
+            return matchFound;
+        }
+
+        createBoard();
+    </script>
+</body>
+</html>
