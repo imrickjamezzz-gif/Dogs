@@ -1,102 +1,220 @@
 <!DOCTYPE html>
-<html>
-  <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <style>
-  body {
-    background-color: black;
-    color: white;
-  }
-</style>?
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Webpage About Dogs</title>
+
 <style>
-.card {
-  padding: 15px;
-  margin: 15px;
-  border-radius: 10px;
+body {
+  background-color: black;
+  color: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+/* Navigation */
+nav {
   background: teal;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}</style>
+  padding: 15px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Hero image */
+.hero {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.hero img {
+  max-width: 90%;
+  border-radius: 12px;
+}
+
+/* Card layout */
+.card-container {
+  width: 100%;
+}
+
+.card {
+  background: teal;
+  width: 80%;
+  max-width: 700px;
+  margin: 25px auto;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,.4);
+}
+
+.card img,
+.card iframe,
+.card video {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.fact-card {
+  background: rgba(255,255,255,0.1);
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 10px;
+}
+</style>
+</head>
+
+<body>
+
 <nav>
-  <ul>
-  <li><a href="#home">Home</a></li>
-   <li><a href="#famous-dogs">Famous Dogs</a></li>
-    <li><a href="#funny-videos">Funny videos</a></li>
-    <li><a href="#dog-history">Dog history</a></li>
-  </ul>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#famous-dogs">Famous Dogs</a></li>
+<li><a href="#funny-videos">Funny Videos</a></li>
+<li><a href="#dog-history">Dog History</a></li>
+</ul>
 </nav>
-<div style="text-align: center;">
-<img src="dogpizza1.jpg" alt="random dogs doing crazy things" width="600" height="400">
+
+<div class="hero">
+<img src="dogpizza1.jpg" alt="Random dogs doing crazy things">
 </div>
 
-    <title>Webpage about dogs</title>
-  </head>
-  <body>
-    <main>
-    <article id="home" class="card">
-      <h1>Dogs</h1>
-      <p>This website is about historical dogs, famous dogs, and funny dog content.</p>
-      <hr> 
-        <h2>Dogs are beautiful.</h2>
-        <hr>
-        <q cite="https://ridetheskyequine.com/blog/amazing-dog-quotes/">I think dogs are the most amazing creatures; they give unconditional love. For me, they are the role model for being alive.</q> <cite>Gilda Radner</cite>
-        <hr>
-        <img src="https://images.pexels.com/photos/6623995/pexels-photo-6623995.jpeg" style="width: 700px; height: 975px;" alt="Dog with colorful sky">
-        </article>
-        <section class="card">
-        <div class="card-container">
-<h2>Fun dog facts</h2>
-<figure>
-<article class="card"><p>Dogs can smell 10,000x better than humans.</p></article>
-<article class="card"><p>The oldest dog lived to 30.</p></article>
-<article class="card"><p>Dogs can learn over 100 words and gestures (Some even more).</p></article></section> </div>
-      </figure>
-      </section>
-      <article class="card" id="dog-history">  
-      <h2>First recorded dog.</h2>
-        <h3>Dogs have been around a long time.</h3>
-        <img src="https://images.pexels.com/photos/27793395/pexels-photo-27793395.jpeg" style="width: 650px; height: 650px;" alt="Dog skull">
-        <p>Dogs have been gracing us with their fluffy presence for at least 15,000 years to possibly over 30,000 years.
-    The earliest, most undisputed evidence of a domesticated dog is the Bonn-Oberkassel dog, dating to 
-    approximately 14,200 years ago. The dog's skull and jawbone were found buried alongside two humans
-    (a man and a woman), suggesting a deep emotional bond and care for the animal, which was likely ill.</p>
-      </article>
-      <article id="funny-videos" class="card">
-      <h2>Funny dog videos.</h2>
-        <h3>Dogs are funny.</h3>
-  <p style="position: absolute; top: 10px; left: 10px; color: white; z-index: 1; font-weight: bold;"> 
-        <p style="color: #DC143C; font-size: 50px;">
-        &hearts;
-        </p>
-        <video width="640" height="360" autoplay muted playsinline controls loop>
-        <source src="5729484-uhd_2160_3840_24fps.mov" type="video/mp4">
-        Your browser does not support the video tag.
-        </video>
-        <p>Dogs always find ways to make people laugh and smile whether they're chasing cats or having a case
-    of the zoomies after an unwanted bath. Dogs are sure to brighten up your day if you're feeling down or
-    just need someone to cuddle with to ease the daily stress life brings on.</p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/-AdteE-KuIg?si=7PN7w5eLDqhrl_6H" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </article>
-      <article id="famous-dogs" class="card">
-      <h2>Famous dogs in history</h2>
-       <h3>Dogs are loyal.</h3>
-        <p>Here is a video of a Hachik&#333;, who is one of the most famous real dogs, who is known for his extraordinary loyalty.</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/-H0mHq_TVzY?si=aq-GvJRPPlzAr2h8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  <h3>Dogs are helpful.</h3>
-  <p>There are many ways that dogs can be helpful. From helping people as service dogs to saving
-lives as fire dogs, K9 police dogs, and military dogs, they have a knack for helping and
-love doing it too. </p>
-<p>Here is a video about Sgt. Stubby, a stray dog who became the most decorated war dog of World War 1.</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/YfZLcqc4RO0?si=QsLKgczd9QlDiM0J" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</article>
-<section class="card">
-<iframe src="match3game2.html" 
-            width="700" 
-            height="500" 
-            style="border:none;">
-    </iframe>
-    </section>
+<main class="card-container">
 
-    </main>
-  </body>
+<section id="home" class="card">
+<h1>Dogs</h1>
+<p>This website is about historical dogs, famous dogs, and funny dog content.</p>
+</section>
+
+<section class="card">
+<h2>Dogs are Beautiful</h2>
+<q>I think dogs are the most amazing creatures; they give unconditional love.</q>
+<p>- Gilda Radner</p>
+<img src="https://images.pexels.com/photos/6623995/pexels-photo-6623995.jpeg" alt="Dog with colorful sky">
+</section>
+
+<section class="card">
+<h2>Fun Dog Facts</h2>
+
+<div class="fact-card">Dogs can smell 10,000x better than humans.</div>
+
+<div class="fact-card">The oldest dog lived to 30.</div>
+
+<div class="fact-card">Dogs can learn over 100 words and gestures.</div>
+</section>
+
+<section id="dog-history" class="card">
+<h2>First Recorded Dog</h2>
+<img src="https://images.pexels.com/photos/27793395/pexels-photo-27793395.jpeg" alt="Dog skull">
+
+<p>
+Dogs have been around at least 15,000 years and possibly over 30,000 years.
+The earliest undisputed evidence is the Bonn-Oberkassel dog.
+</p>
+</section>
+
+<section id="funny-videos" class="card">
+<h2>Funny Dog Videos</h2>
+
+<video controls loop muted>
+<source src="5729484-uhd_2160_3840_24fps.mov" type="video/mp4">
+</video>
+
+<p>Dogs always find ways to make people laugh and smile.</p>
+
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/-AdteE-KuIg"
+allowfullscreen>
+</iframe>
+</section>
+
+<section id="famous-dogs" class="card">
+<h2>Famous Dogs in History</h2>
+
+<h3>Lassi</h3>
+<p>Known for bravery, intelligence, and helping others.</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qTuxOtuSErs?si=fptHqUfEhkpzBRrs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<h3>Hachiko</h3>
+<p>Known for extraordinary loyalty.</p>
+
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/-H0mHq_TVzY"
+allowfullscreen>
+</iframe>
+
+<h3>Buddy</h3>
+<p>Bill and  Hillary Clinton's Labrador Retriever, known for his playful personality.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fijb4s6jMEw?si=sPG3GCCVHkg09NSy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<h3>Sgt. Stubby</h3>
+<p>The most decorated war dog of World War 1.</p>
+
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/YfZLcqc4RO0"
+allowfullscreen>
+</iframe>
+</section>
+
+<section class="card">
+<h2>Dogs are Friendly</h2>
+<img src="https://images.pexels.com/photos/34030440/pexels-photo-34030440.jpeg" alt="dog being petted on chin">
+
+<p>Dogs are known as some of the friendliest animals in the world. They love being petted, playing, and spending time with people.
+ If you give a dog even a little love and attention, it will often become your loyal best friend.
+ Here are some examples of friendly dog breeds and dogs that are especially known for their loving personalities.
+ </p>
+ 
+ <p>Famous Friendly Dog Breeds <br>
+ <ul style="list-style:none; padding-left:0;">
+<li>&#128062 Golden Retriever: Known for a calm, gentle temperament and eagerness to please. </li> <br>
+<li>&#128062 Labrador Retriever: Famous for a playful, outgoing nature and high intelligence. </li><br>
+<li>&#128062 Cavalier King Charles Spaniel: Known as affectionate, playful "lapdogs" that are always eager to cuddle. </li><br>
+<li>&#128062 Beagle: Well-mannered, curious, and sociable pooches. </li> <br>
+<li>&#128062 Newfoundland: Large, gentle dogs famous for their kindness to children. </li> <br>
+<li>&#128062 Boxer: Known for being energetic, loyal, and patient with children. </li> <br>
+<li>&#128062 Irish Setter: Outgoing, high-energy dogs with a "clown-like" personality. </li> <br>
+<li>&#128062 Pug: Highly affectionate companions that adore their families. </li> <br>
+</ul>
+<hr>
+Iconic Friendly Dogs in Pop Culture <br>
+<ul style="list-style:none; padding-left:0;">
+<li>&#128062 Buddy: The White House Labrador Retriever known for his friendly, outgoing personality. </li><br>
+<li>&#128062 Lassie: The famous Collie, representing the loyal and protective nature of the breed. </li><br>
+<li>&#128062 Toto: The Cairn Terrier from The Wizard of Oz, known for being spunky and devoted. </li><br>
+<li>&#128062 Nana: The Newfoundland from Peter Pan, highlighting the breed's reputation as a "nanny dog". </li><br>
+</ul>
+</p>
+ </section>
+
+<section class="card">
+<h2>Dog Game</h2>
+
+<iframe src="match3game2.html"
+width="700"
+height="500"
+style="border:none;">
+</iframe>
+
+</section>
+
+
+</main>
+
+</body>
 </html>
